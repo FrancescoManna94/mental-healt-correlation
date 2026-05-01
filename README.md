@@ -1,48 +1,41 @@
-# AlampiTech: Business Information System for Computer Sales & Assistance
+# Computational Demography: Correlation Between Mental Disorders and Chronic Diseases
 
 ## Project Overview
-This project involves the design and implementation of an integrated Information System for **AlampiTech**, a specialized center for computer sales and technical assistance[cite: 1]. The system aims to digitalize and automate business processes previously managed manually, optimizing three key areas: **Sales Management**, **Technical Assistance**, and **Supplier Order Management**[cite: 1].
+This study explores the complex relationship between mental health and specific individual characteristics, with a primary focus on the prevalence of **Alzheimer’s, Anxiety, and Depression** among individuals suffering from chronic diseases. By identifying key risk factors and their impact, the research aims to support more targeted approaches in prevention, diagnosis, and treatment[cite: 2].
 
-## Key Features
-- **Sales & Inventory:** Real-time tracking of articles, automated order registration, and inventory updates[cite: 1].
-- **Technical Assistance:** Management of repair requests, including fault diagnosis, spare parts verification, and automated quote generation[cite: 1].
-- **Supplier Logistics:** Automated restocking processes, supplier reliability tracking based on historical data, and shipment monitoring[cite: 1].
-- **Financial Integration:** Integrated billing and payment tracking linked to customer orders[cite: 1].
+## Dataset & Methodology
+- **Source:** The study utilizes the **EHIS_A2015** dataset from the European Health Interview Survey (Ehis), specifically focusing on the Italian resident population[cite: 2].
+- **Scope:** The analysis covers three macro-areas: health status, health determinants, and access to healthcare services, integrated with socio-demographic contexts[cite: 2].
+- **Sampling:** A complex sampling design was used, covering a theoretical sample of 12,013 households, with a minimum of 18 interviews per sample municipality[cite: 2].
 
-## System Design & Architecture
+## Data Analysis & Variable Transformation
+- **Target Variables:** Alzheimer, Anxiety, and Depression (recoded from string format for separate analysis)[cite: 2].
+- **Covariates:** The model includes socio-demographic factors (sex, marital status, income, education, geography) alongside lifestyle variables such as physical activity, diet, and smoking habits[cite: 2].
+- **Modeling:** The study employs **Logistic Regression**, providing results in terms of **Odds Ratios** to estimate the propensity of developing these disorders based on various risk factors[cite: 2].
 
-### Requirements Analysis
-The system was designed following a rigorous analysis of business scenarios using **UML Activity Diagrams** and **Use Case Diagrams** to map the interactions between the Secretary, Owner, Technician, and Warehouse Manager[cite: 1].
+## Key Findings
 
+### 1. Gender and Age Trends
+- Across all three disorders, there is a marked prevalence in **women**: 70.73% for Alzheimer’s, 69.65% for Anxiety, and 67.27% for Depression[cite: 2].
+- For Alzheimer’s, individuals over the age of 64 show a massive increase in propensity (746%) compared to younger groups[cite: 2].
+- Conversely, the propensity for Depression decreases by 12% in the over-64 group compared to those under 64[cite: 2].
 
+### 2. Impact of Chronic Diseases
+Chronic conditions significantly increase the odds of mental disorders:
+- **Alzheimer’s:** Strongest correlations found with Parkinson's (545% increase), Cirrhosis (442%), and Stroke (95%)[cite: 2].
+- **Depression:** Highly correlated with Parkinson's (215% increase), Tumors (154%), and Incontinence (153%)[cite: 2].
+- **Anxiety:** Linked to Cirrhosis (167% increase), Parkinson's (120%), and Tumors (112%)[cite: 2].
 
-### Data Modeling
-- **Conceptual Model:** A comprehensive E-R (Entity-Relationship) diagram defining relationships between Customers, Orders, Articles, Suppliers, Shipments, and Invoices[cite: 1].
-- **Relational Model (SQL):** Implementation in **MySQL** with a normalized schema to ensure data integrity through foreign keys and constraints[cite: 1].
-- **Non-Relational Model (NoSQL):** Migration to **MongoDB** using a document-oriented approach. Data is structured into two main root collections: `Orders` (embedding Customers, Invoices, and Shipments) and `Articles` (embedding Restock orders and Suppliers)[cite: 1].
-
-http://googleusercontent.com/image_content/194
-
-
-
-## Database Implementation
-### SQL (MySQL)
-The relational schema includes tables for:
-- **CLIENTE:** Customer demographics and loyalty levels (Bronze, Silver, Gold)[cite: 1].
-- **ORDINE:** Tracking of sales and assistance status[cite: 1].
-- **SPEDIZIONE & FATTURA:** Logistics and billing details[cite: 1].
-- **PREZZO:** Historical tracking of article prices using validity dates[cite: 1].
-
-### NoSQL (MongoDB)
-The implementation focuses on high performance and scalability by embedding related data to reduce the need for joins, which are not natively supported in NoSQL[cite: 1].
+### 3. Lifestyle and Socio-Demographic Factors
+- **Physical Activity:** Regular walking and cycling consistently decrease the propensity for all analyzed mental disorders (e.g., walking reduces Alzheimer's risk by 70% and Depression by 29%)[cite: 2].
+- **Employment:** Being employed reduces the propensity for Anxiety by 47% compared to the unemployed, highlighting the impact of job security on mental health[cite: 2].
+- **Marital Status:** Separated or divorced individuals generally show a higher propensity for mental health challenges compared to single (never married) individuals[cite: 2].
 
 ## Technologies Used
-- **Modeling:** UML, E-R Diagrams (MySQL Workbench)[cite: 1].
-- **Relational Database:** MySQL[cite: 1].
-- **NoSQL Database:** MongoDB[cite: 1].
-- **Documentation:** Technical Report including a Glossary of Terms (Brand, Restock, Tracking, etc.)[cite: 1].
+- **Data Processing:** Stata (as indicated by the `.dta` file format and logistic regression output tables)[cite: 2].
+- **Statistical Methods:** Logistic Regression, Density Histograms, and Pie Chart Distributions[cite: 2].
 
-## Project Authors
-- **Antonio Alampi** (Matricola 252085)[cite: 1]
-- **Francesco Mannarino** (Matricola 252078)[cite: 1]
-- *Course: Data Science for Business Strategies - Università della Calabria (2023-2024)*[cite: 1]
+## Project Details
+- **Author:** Francesco Mannarino[cite: 2]
+- **Supervision:** Prof.ssa Manuela Stranges[cite: 2]
+- **Date:** December 25, 2023[cite: 2]
